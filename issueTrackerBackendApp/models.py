@@ -10,3 +10,4 @@ class Issue(models.Model):
 
     def __str__(self):
         return f'{self.issue_name} was created on {self.date_created}'
+
