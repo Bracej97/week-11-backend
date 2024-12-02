@@ -10,7 +10,7 @@ from rest_framework_api_key.permissions import HasAPIKey
 
 # View for listing all issues
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
+@permission_classes([IsAuthenticated])
 # @permission_classes([HasAPIKey])
 def getAllIssues(request):
     issues = Issue.objects.all()
@@ -22,7 +22,7 @@ def getAllIssues(request):
 
 # View for getting issue by id
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
+@permission_classes([IsAuthenticated])
 # @permission_classes([HasAPIKey])
 def getIssueById(request, id):
     try:
@@ -35,7 +35,7 @@ def getIssueById(request, id):
 
 # View for adding a new issue
 @api_view(['POST'])
-# @permission_classes([IsAuthenticated])
+@permission_classes([IsAuthenticated])
 # @permission_classes([HasAPIKey])
 def addIssue(request):
     serializer = IssueSerializer(data=request.data)
@@ -45,7 +45,7 @@ def addIssue(request):
     return Response(serializer.errors, status=400)
 
 @api_view(['PUT'])
-# @permission_classes([IsAuthenticated])
+@permission_classes([IsAuthenticated])
 # @permission_classes([HasAPIKey])
 def updateIssue(request, id):
     try:
@@ -59,7 +59,7 @@ def updateIssue(request, id):
         return Response({"error": "Issue not found"}, status=404)
 
 @api_view(['DELETE'])
-# @permission_classes([IsAuthenticated])
+@permission_classes([IsAuthenticated])
 # @permission_classes([HasAPIKey])
 def deleteIssue(request, id):
     try:
