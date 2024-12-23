@@ -91,7 +91,7 @@ WSGI_APPLICATION = 'issueTrackerBackend.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default='postgresql://postgres:postgres@http://localhost:8000//issueTrackerBackend',
+        default='postgresql://mysite:FByQxRUk3M8rnT2Ozass11ZzYL8D8PLC@dpg-ctk7cvaj1k6c73cn3sbg-a.oregon-postgres.render.com/mysite_juc9',
         conn_max_age=600
     )
 }
